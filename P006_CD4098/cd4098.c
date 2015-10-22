@@ -9,7 +9,7 @@
  * Date:			18-10-2015
  * Author:		Marcel van der Ven
  *
- * Hardware setup:	
+ * Hardware setup:		
  *
  * Note(s):
  *--------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -32,7 +32,9 @@
 /************************************************************************/
 struct CD4098
 {
-
+	volatile BYTE* dataOutputPortRegister;
+	volatile BYTE* dataInputPortRegister;
+	BYTE trPlusPin;
 	
 	/* Specifies if the structure is initialized with the register addresses and pin numbers */
 	BOOL isInitialized;
@@ -41,3 +43,26 @@ struct CD4098
 /************************************************************************/
 /* Functions				                                                                  */
 /************************************************************************/
+
+void InitializeCD4098(volatile BYTE* dataOutputPortRegister,
+					  volatile BYTE* dataInputPortRegister,
+					  BYTE trPlusPin)
+{
+	cd4098.dataOutputPortRegister = dataOutputPortRegister;
+	cd4098.dataInputPortRegister = dataInputPortRegister;
+	cd4098.trPlusPin = trPlusPin;
+
+	/* Initialization finished, set flag to TRUE */	
+	cd4098.isInitialized = TRUE;
+}
+
+
+void SetPulseHigh()
+{
+	SET_BIT(cd4098.dataOutputPortRegister, cd4098.dataInputPortRegister, cd4098.trPlusPin);
+}
+
+void SetPulseLow()
+{
+	SET_BIT(cd4098.dataOutputPortRegister, cd4098.dataInputPortRegister, cd4098.trPlusPin);
+}	
