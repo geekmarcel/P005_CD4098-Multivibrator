@@ -64,5 +64,5 @@ void SetPulseHigh()
 
 void SetPulseLow()
 {
-	SET_BIT(cd4098.dataOutputPortRegister, cd4098.dataInputPortRegister, cd4098.trPlusPin);
+	CLEAR_BIT(cd4098.dataOutputPortRegister, cd4098.dataInputPortRegister, cd4098.trPlusPin);
 }	

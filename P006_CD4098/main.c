@@ -50,9 +50,17 @@ int main(void)
 {
 	/* Setup and initialization */
 	Setup();
+	InitializeCD4098(&PORTB,&PINB,PORTB0);
+	
+	SetPulseLow();
+	_delay_ms(10000);
 	
     while(1)
     {
-
+		SetPulseHigh();		
+		_delay_ms(1000);
+		
+		SetPulseLow();
+		_delay_ms(10000);
     }
 }
