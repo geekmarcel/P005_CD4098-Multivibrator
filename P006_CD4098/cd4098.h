@@ -40,8 +40,8 @@
 void InitializeCD4098(volatile BYTE* dataOutputPortRegister,
 					  volatile BYTE* dataInputPortRegister,
 					  BYTE trPlusPin);
-void SetPulseHigh();
-
+void SetPulseHigh(void);
+void SetPulseLow(void);
 
 
 

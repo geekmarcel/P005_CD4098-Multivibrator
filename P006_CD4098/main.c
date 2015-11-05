@@ -61,6 +61,6 @@ int main(void)
 		_delay_ms(1000);
 		
 		SetPulseLow();
-		_delay_ms(10000);
+		_delay_ms(1000);
     }
 }

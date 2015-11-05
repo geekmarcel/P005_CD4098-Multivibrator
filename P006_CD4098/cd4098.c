@@ -57,12 +57,12 @@ void InitializeCD4098(volatile BYTE* dataOutputPortRegister,
 }
 
 
-void SetPulseHigh()
+void SetPulseHigh(void)
 {
 	SET_BIT(cd4098.dataOutputPortRegister, cd4098.dataInputPortRegister, cd4098.trPlusPin);
 }
 
-void SetPulseLow()
+void SetPulseLow(void)
 {
 	CLEAR_BIT(cd4098.dataOutputPortRegister, cd4098.dataInputPortRegister, cd4098.trPlusPin);
 }	
