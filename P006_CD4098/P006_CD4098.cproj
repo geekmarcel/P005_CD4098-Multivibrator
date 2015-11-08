@@ -60,6 +60,7 @@
       </ToolNumber>
       <ToolName xmlns="">Simulator</ToolName>
     </com_atmel_avrdbg_tool_simulator>
+    <preserveEEPROM>true</preserveEEPROM>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -136,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Docs\CD4098B.pdf">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Docs\cd4098bms.pdf">
       <SubType>compile</SubType>
     </None>
   </ItemGroup>

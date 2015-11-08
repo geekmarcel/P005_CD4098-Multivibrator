@@ -1,13 +1,13 @@
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------
 * Project: 		Post 6 CD4098
 * Hardware:		Arduino UNO
-* Micro:			ATMEGA328P
+* Micro:		ATMEGA328P
 * IDE:			Atmel Studio 6.2
 *
 * Name:    		main.c
 * Purpose: 		CD4098 Example
 * Date:			18-10-2015
-* Author:			Marcel van der Ven
+* Author:		Marcel van der Ven
 *
 * Hardware setup:	PORTB1		Trigger Pulse signal (pin 4 on CD4098)
 *
@@ -15,12 +15,12 @@
 *--------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /************************************************************************/
-/* Defines				                                                                  */
+/* Defines				                                                */
 /************************************************************************/
 #define F_CPU	16000000UL
 
 /************************************************************************/
-/* Includes				                                                                  */
+/* Includes				                                                */
 /************************************************************************/
 #include <avr/io.h>
 #include "util/delay.h"
@@ -44,7 +44,7 @@ void Setup()
 *  Function:		Main(void)
 *  Description:		Main function of the program.
 *  Receives:		Nothing
-*  Returns:		Optionally the exit code.
+*  Returns:			Optionally the exit code.
 ***************************************************************************/
 int main(void)
 {
@@ -57,10 +57,12 @@ int main(void)
 	
     while(1)
     {
+		/* Set pulse high for 500 milliseconds */
 		SetPulseHigh();		
-		_delay_ms(1000);
+		_delay_ms(500);
 		
+		/* Set pulse low for 3 seconds */
 		SetPulseLow();
-		_delay_ms(1000);
+		_delay_ms(3000);
     }
 }

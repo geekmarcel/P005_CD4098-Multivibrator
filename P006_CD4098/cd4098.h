@@ -2,12 +2,12 @@
  * Project: 		CD4098 library
  * Hardware:		Arduino UNO
  * Micro:			ATMEGA328P
- * IDE:			Atmel Studio 6.2
+ * IDE:				Atmel Studio 6.2
  *
  * Name:    		cd4098.h
  * Purpose: 		CD4098 CMOS IC Header file for library
  * Date:			18-10-2015
- * Author:		Marcel van der Ven
+ * Author:			Marcel van der Ven
  *
  * Hardware setup:	
  *
@@ -19,23 +19,23 @@
 #define CD4098_H_
 
 /************************************************************************/
-/* Includes				                                                                  */
+/* Includes				                                                */
 /************************************************************************/
 #include "common.h"
 
 
 /************************************************************************/
-/* Enumerations			                                                                  */
+/* Enumerations			                                                */
 /************************************************************************/
 
 
 /************************************************************************/
-/* Structures				                                                                  */
+/* Structures				                                            */
 /************************************************************************/
 
 
 /************************************************************************/
-/* Function prototypes		                                                                  */
+/* Function prototypes		                                            */
 /************************************************************************/
 void InitializeCD4098(volatile BYTE* dataOutputPortRegister,
 					  volatile BYTE* dataInputPortRegister,

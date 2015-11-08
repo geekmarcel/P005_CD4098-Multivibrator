@@ -2,12 +2,12 @@
  * Project: 		CD4098 Library
  * Hardware:		Arduino UNO
  * Micro:			ATMEGA328P
- * IDE:			Atmel Studio 6.2
+ * IDE:				Atmel Studio 6.2
  *
  * Name:			cd4098.c
  * Purpose: 		CMOS CD4098 Library functions
  * Date:			18-10-2015
- * Author:		Marcel van der Ven
+ * Author:			Marcel van der Ven
  *
  * Hardware setup:		
  *
@@ -44,6 +44,16 @@ struct CD4098
 /* Functions				                                                                  */
 /************************************************************************/
 
+/***************************************************************************
+*  Function:		InitializeCD4098(volatile BYTE* dataOutputPortRegister,
+*									 volatile BYTE* dataInputPortRegister,
+*									 BYTE trPlusPin)
+*  Description:		Initializes the registers.
+*  Receives:		BYTE* dataOutputPortRegister	:	pointer to the data output register
+*					BYTE* dataInputPortRegister		:	pointer to the data input register
+*					BYTE trPlusPin					:	pin number to which the TR pin is connected.
+*  Returns:			Nothing
+***************************************************************************/
 void InitializeCD4098(volatile BYTE* dataOutputPortRegister,
 					  volatile BYTE* dataInputPortRegister,
 					  BYTE trPlusPin)
@@ -56,13 +66,30 @@ void InitializeCD4098(volatile BYTE* dataOutputPortRegister,
 	cd4098.isInitialized = TRUE;
 }
 
-
+/***************************************************************************
+*  Function:		SetPulseHigh(void)
+*  Description:		Sets the output high.
+*  Receives:		Nothing
+*  Returns:			Nothing
+***************************************************************************/
 void SetPulseHigh(void)
 {
-	SET_BIT(cd4098.dataOutputPortRegister, cd4098.dataInputPortRegister, cd4098.trPlusPin);
+	if(cd4098.isInitialized == TRUE)
+	{
+		SET_BIT(cd4098.dataOutputPortRegister, cd4098.dataInputPortRegister, cd4098.trPlusPin);
+	}
 }
 
+/***************************************************************************
+*  Function:		SetPulseLow(void)
+*  Description:		Sets the output low.
+*  Receives:		Nothing
+*  Returns:			Nothing
+***************************************************************************/
 void SetPulseLow(void)
 {
-	CLEAR_BIT(cd4098.dataOutputPortRegister, cd4098.dataInputPortRegister, cd4098.trPlusPin);
+	if(cd4098.isInitialized == TRUE)
+	{
+		CLEAR_BIT(cd4098.dataOutputPortRegister, cd4098.dataInputPortRegister, cd4098.trPlusPin);
+	}
 }	
