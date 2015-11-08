@@ -29,9 +29,9 @@
 
 /***************************************************************************
 *  Function:		Setup()
-*  Description:		Setup ....
+*  Description:		Setup PORTB.
 *  Receives:		Nothing
-*  Returns:		Nothing
+*  Returns:			Nothing
 ***************************************************************************/
 void Setup()
 {
