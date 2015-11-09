@@ -61,8 +61,8 @@ int main(void)
 		SetPulseHigh();		
 		_delay_ms(500);
 		
-		/* Set pulse low for 3 seconds */
+		/* Set pulse low for 2,5 seconds */
 		SetPulseLow();
-		_delay_ms(3000);
+		_delay_ms(2500);
     }
 }
